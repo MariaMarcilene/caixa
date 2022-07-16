@@ -7,10 +7,9 @@ public class ObtemComandoImpl implements ObtemComando {
     @Override
     public int execute() {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite sua escolha: ");
-        int escolha = entrada.nextInt();
-       return escolha;
+        System.out.println("Digite a opção desejada: ");
+        int comando = entrada.nextInt();
 
-
+       return comando;
     }
 }

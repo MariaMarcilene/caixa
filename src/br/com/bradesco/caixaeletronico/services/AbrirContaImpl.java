@@ -7,11 +7,13 @@ public class AbrirContaImpl implements AbrirConta {
 
     private final MemoriaContaRepository repository;
 
+
     public AbrirContaImpl(MemoriaContaRepository repository) {
         this.repository = repository;
     }
 
-    @Override // sobrepor
+
+    @Override // sobrepor o método
     public Conta execute() {
         Conta conta;
 
@@ -19,8 +21,7 @@ public class AbrirContaImpl implements AbrirConta {
 
         repository.adiciona(conta);
 
-        System.out.printf("Conta numero %d o saldo atual é de R$.2f", conta.getNumeroDaConta(), conta.getSaldo());
-
+        System.out.printf("Conta número %d, o saldo atual é de R$ %.2f. %n", conta.getNumeroDaConta(), conta.getSaldo());
         return conta;
     }
 }

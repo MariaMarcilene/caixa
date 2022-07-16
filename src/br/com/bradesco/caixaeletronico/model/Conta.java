@@ -5,10 +5,14 @@ public class Conta {
     private int numeroDaConta;
     private double saldo;
 
+
+    // Construtor
     public Conta() {
         saldo = 0;
     }
 
+
+    // Get e Set
     public int getNumeroDaConta() {
         return numeroDaConta;
     }
@@ -17,10 +21,13 @@ public class Conta {
         this.numeroDaConta = numeroDaConta;
     }
 
+    // Get
     public double getSaldo() {
         return saldo;
     }
 
+
+    // Métodos
     public void adicionaSaldo(double valor) {
         saldo = saldo + valor;
     }
@@ -34,5 +41,4 @@ public class Conta {
             return false;
         }
     }
-
 }

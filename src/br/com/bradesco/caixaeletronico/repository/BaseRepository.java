@@ -1,6 +1,11 @@
 package br.com.bradesco.caixaeletronico.repository;
 
-public interface BaseRepository {
+import java.util.List;
 
-    void adiciona();
+public interface BaseRepository<T> {
+
+    List<T> findAll();
+    T findById(int id);
+
+    void adiciona(T objeto);
 }

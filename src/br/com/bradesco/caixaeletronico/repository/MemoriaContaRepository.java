@@ -1,7 +1,13 @@
 package br.com.bradesco.caixaeletronico.repository;
 
+import br.com.bradesco.caixaeletronico.model.Conta;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MemoriaContaRepository implements BaseRepository<Conta> {
 
+    // Variável
     private List<Conta> contas = new ArrayList<>();
 
     @Override
@@ -10,7 +16,14 @@ public class MemoriaContaRepository implements BaseRepository<Conta> {
     }
 
     @Override
-    public Conta findByld(int id) {
-        return
+    public Conta findById(int id) {
+        return contas.get(id);
+    }
+
+    @Override
+    public void adiciona(Conta objeto) {
+        objeto.setNumeroDaConta(contas.size());
+        contas.add(objeto);
     }
 }
+
