@@ -7,11 +7,9 @@ import java.util.Scanner;
 public class ExecutarComandoEspecificoImpl implements ExecutarComandoEspecifico {
 
     // Variáveis
-    private final Deposito deposito; //= new DepositoImpl();
+    private final Deposito deposito;
     private final Saque saque;
     private final AbrirConta abrirConta;
-
-    //private final MemoriaContaRepository repository;
 
 
     // Construtor
@@ -20,8 +18,8 @@ public class ExecutarComandoEspecificoImpl implements ExecutarComandoEspecifico 
         this.deposito = new DepositoImpl(repository);
         this.saque = new SaqueImpl(repository);
         this.abrirConta = new AbrirContaImpl(repository);
-        //this.repository = new MemoriaContaRepository();
     }
+
 
     @Override
     public boolean execute(int comando) {
@@ -52,7 +50,7 @@ public class ExecutarComandoEspecificoImpl implements ExecutarComandoEspecifico 
             this.deposito.execute(valor, numero);
             System.out.println("Depositando dinheiro");
 
-        }else if (comando == 3)  {
+        } else if (comando == 3) {
             abrirConta.execute();
             System.out.println("Abrindo conta");
 
@@ -61,7 +59,7 @@ public class ExecutarComandoEspecificoImpl implements ExecutarComandoEspecifico 
         }
 
         return resultado;
-       }
+    }
 }
 
 
